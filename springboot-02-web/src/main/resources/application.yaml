@@ -5,3 +5,8 @@ spring:
   web:
     resources:
       static-locations: [classpath:/test/]
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
