@@ -1,11 +1,10 @@
 package com.springboot.springboot03admin.controller;
 
-import com.springboot.springboot03admin.controller.bean.User;
+import com.springboot.springboot03admin.bean.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 

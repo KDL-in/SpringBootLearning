@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -40,7 +40,7 @@
 
 <section>
     <!-- left side start-->
-    <div class="left-side sticky-left-side">
+    <div th:replace="common :: #leftmenu" class="left-side sticky-left-side">
 
         <!--logo and iconic logo start-->
         <div class="logo">
@@ -279,7 +279,7 @@
                                     <a href="">
                                         <span class="thumb"><img src="images/photos/user1.png" alt="" /></span>
                                         <span class="desc">
-                                          <span class="name">John Doe <span class="badge badge-success">new</span></span>
+                                          <span class="name">[[session.user.name]] <span class="badge badge-success">new</span></span>
                                           <span class="msg">Lorem ipsum dolor sit amet...</span>
                                         </span>
                                     </a>
@@ -367,7 +367,7 @@
                     <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             <img src="images/photos/user-avatar.png" alt="" />
-                            John Doe
+                            [[${session.user.name}]]
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-usermenu pull-right">

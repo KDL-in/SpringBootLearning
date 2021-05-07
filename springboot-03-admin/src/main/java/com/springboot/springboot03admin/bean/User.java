@@ -1,4 +1,4 @@
-package com.springboot.springboot03admin.controller.bean;
+package com.springboot.springboot03admin.bean;
 
 import lombok.Data;
 import lombok.ToString;

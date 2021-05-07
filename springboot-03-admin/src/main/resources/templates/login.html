@@ -29,10 +29,9 @@
             <img src="images/login-logo.png" alt=""/>
         </div>
         <div class="login-wrap">
-            <label style="color:palevioletred" th:text="${msg}"></label>
-            <input type="text" class="form-control" name="name" placeholder="User ID" autofocus>
-            <input type="password" class="form-control" name="passwd" placeholder="Password">
-
+            <label style="color: red" th:text="${msg}"></label>
+            <input type="text" name="name" class="form-control" placeholder="User ID" autofocus>
+            <input type="password" name="passwd" class="form-control" placeholder="Password">
             <button class="btn btn-lg btn-login btn-block" type="submit">
                 <i class="fa fa-check"></i>
             </button>
