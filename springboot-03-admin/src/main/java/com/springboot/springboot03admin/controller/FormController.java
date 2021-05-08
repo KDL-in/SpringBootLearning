@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
@@ -16,11 +17,14 @@ public class FormController {
         return "form/form_layouts";
     }
 
-    @PostMapping("upload")
+    @PostMapping("/upload")
     public String uploadFile(@RequestParam("email")String email,
                              @RequestParam("username") String name,
-                             MultipartFile img,
-                             MultipartFile[] photos) {
+                             @RequestPart("headerImg") MultipartFile img,
+                            @RequestPart("photos") MultipartFile[] photos
+    ) {
+        log.info("email: {}, name: {}, headerImg size: {}, photos: {}", email, name, img.getSize(), photos.length);
+
         return "main";
     }
 }
