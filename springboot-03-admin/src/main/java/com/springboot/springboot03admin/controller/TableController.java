@@ -2,8 +2,6 @@ package com.springboot.springboot03admin.controller;
 
 
 
-import com.springboot.springboot03admin.bean.User;
-import com.springboot.springboot03admin.exception.UserTooManyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,43 +25,14 @@ public class TableController {
      * @return
      */
     @GetMapping("/basic_table")
-    public String basic_table(@RequestParam("v") int v){
+    public String basic_table(){
 
-        int i = 10/0;
+//        int i = 10/0;
         return "table/basic_table";
     }
 
 
-    @GetMapping("/dynamic_table")
-    public String dynamic_table(@RequestParam(value="pn",defaultValue = "1") Integer pn,Model model){
-        //表格内容的遍历
-//        response.sendError
-     List<User> users = Arrays.asList(new User("zhangsan", "123456"),
-                new User("lisi", "123444"),
-                new User("haha", "aaaaa"),
-                new User("hehe ", "aaddd"));
-        model.addAttribute("users",users);
 
-        if(users.size()>3){
-            throw new UserTooManyException();
-        }
-        //从数据库中查出user表中的用户进行展示
-
-//        //构造分页参数
-//        Page<User> page = new Page<>(pn, 2);
-//        //调用page进行分页
-//        Page<User> userPage = userService.page(page, null);
-
-
-//        userPage.getRecords()
-//        userPage.getCurrent()
-//        userPage.getPages()
-
-
-//        model.addAttribute("users",userPage);
-
-        return "table/dynamic_table";
-    }
 
 
 
